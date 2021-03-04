@@ -1,11 +1,17 @@
 function login(){
-    login = document.getElementById('login_field').value;
-    password = document.getElementById('password_field').value;
+    login_field = document.getElementById('login_field');
+    password_field = document.getElementById('password_field');
 
-    if ((login.toLowerCase() == 'admin') && (password.toLowerCase() =='kirby')){
-        console.log('login success');
+    if ((login_field.value.toLowerCase() == 'admin') && (password_field.value.toLowerCase() =='kirby')){
+        login_field.classList.remove('is-error');
+        password_field.classList.remove('is-error');
+        login_field.classList.add('is-success');
+        password_field.classList.add('is-success');
     } else {
-        console.log('login failed');
+        login_field.classList.remove('is-success');
+        password_field.classList.remove('is-success');
+        login_field.classList.add('is-error');
+        password_field.classList.add('is-error');
     }
 }
 
