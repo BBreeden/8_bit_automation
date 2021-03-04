@@ -5,7 +5,6 @@
 {% include 'header.html' %}
 
 <body>
-{% include 'menu.html' %}
     <main role="main">
         <h1>Welcome to 8-Bit Automation!</h1>
         <section id="greeting" class="nes-container with-title">
@@ -17,14 +16,16 @@
 
         <section id="login" class="nes-container with-title">
             <p class="title">Login</p>
-            <div class="nes-field">
-                <label for="login_">Login Name</label>
-                <input type="text" id="login_field" class="nes-input">
-            </div>
-            <div class="nes-field">
+            <form id="login_form">
+                <label for="login_field">Login Name</label>
+                <input type="text" id="login_field" class="nes-input" placeholder="Admin">
                 <label for="password_field">Password</label>
-                <input type="password" id="password_field" class="nes-input">
-            </div>
+                <input type="password" id="password_field" class="nes-input" placeholder="Kirby">
+                <section id="login_btn_row">
+                    <button id="login_btn" type="button" class="nes-btn is-primary">Login</button>
+                    <button id="cancel_btn" type="button" class="nes-btn is-warning">Cancel</button>
+                </section>
+            </form>
         </section>
         <i class="nes-kirby"></i>
     </main>
@@ -32,4 +33,6 @@
 </body>
 
 {% include 'footer.html' %}
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+
 </html>

@@ -17,10 +17,20 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 25px;
 }
 
 nav {
   width: 100%;
+}
+
+#login {
+  max-width: 650px;
+  margin: 20px;
+}
+
+#login_btn_row {
+  margin-top: 15px;
 }
 
 #greeting {
