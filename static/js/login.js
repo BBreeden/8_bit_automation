@@ -4,6 +4,7 @@ function login(){
         password_field.classList.remove('is-error');
         login_field.classList.add('is-success');
         password_field.classList.add('is-success');
+        location.replace('../../home');
     } else {
         login_field.classList.remove('is-success');
         password_field.classList.remove('is-success');
@@ -33,6 +34,7 @@ function removeStatusCSS(){
     password_field.classList.remove('is-success');
     forgot_password.classList.add('hidden');
     login_fail_msg.classList.add('hidden');
+    password_hint.classList.add('hidden');
     login_counter = 0;
 }
 
@@ -46,6 +48,7 @@ window.onload = function() {
     password_field = document.getElementById('password_field');
     login_fail_msg = document.getElementById('login-fail-alert');
     forgot_password = document.getElementById('login-forgot');
+    password_hint = document.getElementById('password-hint');
     login_counter = 0;
     secret_sound = new Audio('../static/misc/secret.mp3')
   };
