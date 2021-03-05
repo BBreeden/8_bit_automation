@@ -29,10 +29,23 @@ nav {
   margin: 20px;
 }
 
+#login-alerts {
+  width: fit-content;
+  padding-top: 10px;
+}
+
 #login_btn_row {
   margin-top: 15px;
 }
 
+#login-fail-alert, #login-forgot {
+  margin: 0;
+}
+
 #greeting {
   margin: 30px 0px 30px;
+}
+
+.hidden {
+  display: none;
 }
