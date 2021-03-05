@@ -12,6 +12,8 @@
             <p>This project was designed to give developers a playground to learn about web automation. Any actions taken on this website are not permanent and it makes for a great place to practice writing automated scripts!</p>
 
             <p>If you are new to web automation, I have written a getting started guide here!</p>
+
+            <p class="hidden" id="password-hint">Oh yeah, the password (I almost forgot)! The login is 'Admin' and the password is 'Kirby'. You can also bypass the login page by going to the next page directly. (It has been suggested that whoever is in charge of security around here isn't very good.)</p>
         </section>
 
         <section id="login" class="nes-container with-title">
@@ -27,7 +29,8 @@
                 </section>
             </form>
             <section id="login-alerts">
-                <p id="login-fail-alert" class="nes-text is-error hidden">Login Failed</p><p id="login-forgot" class="nes-text is-primary hidden">Forgot the password?</p>
+                <p id="login-fail-alert" class="nes-text is-error hidden">Login Failed</p>
+                <p id="login-forgot" class="nes-text is-primary hidden nes-pointer">Forgot the password?</p>
             </section>
         </section>
         <i class="nes-kirby"></i>

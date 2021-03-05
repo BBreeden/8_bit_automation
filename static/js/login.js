@@ -39,6 +39,9 @@ function removeStatusCSS(){
 window.onload = function() {
     document.getElementById('login_btn').addEventListener('click', login);
     document.getElementById('cancel_btn').addEventListener('click', cancel);
+    document.getElementById('login-forgot').addEventListener('click', function(){
+        document.getElementById('password-hint').classList.remove('hidden');
+    });
     login_field = document.getElementById('login_field');
     password_field = document.getElementById('password_field');
     login_fail_msg = document.getElementById('login-fail-alert');
