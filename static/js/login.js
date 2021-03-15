@@ -11,12 +11,6 @@ function login(){
         login_field.classList.add('is-error');
         password_field.classList.add('is-error');
         login_fail_msg.classList.remove('hidden');
-        login_counter++;
-
-        if (login_counter == 3) {
-            forgot_password.classList.remove('hidden');
-            secret_sound.play()
-        }
     }
 }
 
@@ -32,7 +26,6 @@ function removeStatusCSS(){
     password_field.classList.remove('is-error');
     login_field.classList.remove('is-success');
     password_field.classList.remove('is-success');
-    forgot_password.classList.add('hidden');
     login_fail_msg.classList.add('hidden');
     password_hint.classList.add('hidden');
     login_counter = 0;
