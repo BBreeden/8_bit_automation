@@ -1,4 +1,3 @@
-<!-- This file is not to be used directly, template only. -->
 <!doctype html>
 
 <html lang="en">
@@ -12,16 +11,46 @@
         {% block content %}
       
         <form method='POST' action="{{ url_for('confirmation') }}">
-          {{ form.name.label(id='form_name_label', class='nes-input') }} <br />
-          {{ form.name(id='form_name') }}<br />
+          <!-- {{ form.fname.label(id='form_fname_label', class='nes-input') }} <br />
+          {{ form.fname(id='form_fname') }}<br />
 
-          {{ form.email.label(id='email_form_label') }}<br />
+          {{ form.lname.label(id='form_lname_label', class='nes-input') }} <br />
+          {{ form.lname(id='form_lname') }}<br />
+
+          {{ form.email.label(id='form_email_label', class='nes-input') }} <br />
           {{ form.email(id='form_email') }}<br />
 
-          {{ form.body.label(id='form_message_label') }}<br />
-          {{ form.body(cols="40", rows="5", id='form_message') }}<br />
+          {{ form.street.label(id='form_street_label', class='nes-input') }} <br />
+          {{ form.street(id='form_street') }}<br />
 
-          {{ form.submit(id='submit_button') }}
+          {{ form.city.label(id='form_city_label', class='nes-input') }} <br />
+          {{ form.city(id='form_city') }}<br />
+
+          {{ form.city.label(id='form_city_label', class='nes-input') }} <br />
+          {{ form.city(id='form_city') }}<br />
+
+
+          {{ form.submit(id='submit_button') }} -->
+
+          {% for field in form %}
+
+              {% if field.type == "RadioField" %}        
+                {{form.work.label}}
+               
+               {% for subfield in form.work %}
+                <label>
+                   {{ subfield(class='nes-radio') }}
+                   <span>Yes</span>
+                </label>
+      
+               {% endfor %}  
+              {% else %}
+                  {{ field.label }}<br />
+                  {{ field }}<br />
+              {% endif %}
+
+          {% endfor %}
+          
         </form>
         
         {% endblock %}
