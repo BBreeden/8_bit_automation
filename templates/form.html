@@ -13,6 +13,7 @@
         <form method='POST' action="{{ url_for('confirmation') }}">
 
           {% for field in form %}
+            <div class="element">
 
               {% if field.type == "RadioField" %}        
                 {{form.work.label}}
@@ -25,20 +26,23 @@
               
               {% elif (field.type == "StringField" or
                         field.type == "IntegerField" or
-                        field.type == "TextField") %}
+                        field.type == "TextAreaField") %}
                 {{ field.label }}<br />
                 {{ field(class='nes-input') }}<br />
               
               {% elif (field.type == "BooleanField")%}
                 {{ field.label }}
+                <br />
               <label>
                 {{ field(class="nes-checkbox") }}
                 <span>I agree!</span>
               </label>
 
+              
               {% elif (field.type == "SubmitField")%}
                   {{ field(class="nes-btn is-primary") }}<br />
               {% endif %}
+            </div>
 
           {% endfor %}
           

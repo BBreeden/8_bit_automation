@@ -39,6 +39,11 @@ nav {
   padding: 15px;
 }
 
+#experience {
+  height: 300px;
+  vertical-align: top;
+}
+
 #login {
   max-width: 650px;
   margin: 20px;
@@ -63,6 +68,10 @@ nav {
 
 #social-icons {
   padding-top: 5px;
+}
+
+.element {
+  padding: 10px;
 }
 
 .footer-text {
