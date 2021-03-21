@@ -41,6 +41,13 @@
               
               {% elif (field.type == "SubmitField")%}
                   {{ field(class="nes-btn is-primary") }}<br />
+
+              {% elif (field.type == "SelectField") %}
+                {{ field.label }}<br />
+                <div class="nes-select">
+                  {{ field }}<br />
+                </div>
+              
               {% endif %}
             </div>
 

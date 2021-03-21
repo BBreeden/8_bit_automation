@@ -1,9 +1,10 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextField, SubmitField, TextAreaField, validators, IntegerField, RadioField, BooleanField
+from wtforms import StringField, TextField, SubmitField, TextAreaField, validators, IntegerField, RadioField, BooleanField, SelectField
 from wtforms.validators import DataRequired, Length, Email
 import email_validator
 
 class AppForm(FlaskForm):
+    position = SelectField('What position are you applying for?', [DataRequired()], choices=[('acc', 'Accounting Manager'), ('dev', 'Junior Software Engineer (5+ years exp required)'), ('koopa', 'Koopa Troopa')])
     fname = StringField('First Name', [ DataRequired() ])
     lname = StringField('Last Name', [ DataRequired() ])
     email = StringField('Email', [validators.DataRequired(), validators.Email()])
