@@ -14,6 +14,6 @@ class AppForm(FlaskForm):
     experience = TextAreaField('Experience from the last 16 years (no resumes accepted)', [DataRequired()])
     salary = StringField('Requested Salary', [DataRequired()])
     work = RadioField('Are you willing to work 90 hour weeks?', [DataRequired()], choices=[('Yes','yes'),('Also Yes','yes2')])
-    boss = BooleanField('If you get hurt on the job, you can\'t sue us.', [DataRequired()])
-    mario = BooleanField('If an Italian plumber shows up and starts making a mess, do you agree to clean it up?', [DataRequired()])
+    sue = BooleanField('If you get hurt on the job, you can\'t sue us.', [DataRequired()])
+    data = BooleanField('We will probably collect your data and you should allow us to do it.', [DataRequired()])
     submit = SubmitField('Send')
