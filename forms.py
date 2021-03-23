@@ -1,7 +1,9 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextField, SubmitField, TextAreaField, validators, IntegerField, RadioField, BooleanField, SelectField
+from wtforms.fields.html5 import DateField
 from wtforms.validators import DataRequired, Length, Email
 import email_validator
+from datetime import date
 
 class AppForm(FlaskForm):
     position = SelectField('What position are you applying for?', [DataRequired()], choices=[('acc', 'Accounting Manager'), ('dev', 'Junior Software Engineer (5+ years exp required)'), ('koopa', 'Koopa Troopa')])
@@ -12,8 +14,9 @@ class AppForm(FlaskForm):
     city = StringField('City', [DataRequired()])
     zcode = IntegerField('Zip Code', [DataRequired(), Length(min=5, max=5, message=('Please enter a valid, 5 digit zip code.')) ])
     experience = TextAreaField('Experience from the last 16 years (no resumes accepted)', [DataRequired()])
-    salary = StringField('Requested Salary', [DataRequired()])
+    salary = StringField('Requested Salary ($ Per Year)', [DataRequired()])
     work = RadioField('Are you willing to work 90 hour weeks?', [DataRequired()], choices=[('Yes','yes'),('Also Yes','yes2')])
     sue = BooleanField('If you get hurt on the job, you can\'t sue us.', [DataRequired()])
     data = BooleanField('We will probably collect your data and you should allow us to do it.', [DataRequired()])
+    startdate = DateField('GREAT! When can you start?', default = date.today)
     submit = SubmitField('Send')

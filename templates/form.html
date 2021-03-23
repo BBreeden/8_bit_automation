@@ -37,7 +37,6 @@
                 {{ field(class="nes-checkbox") }}
                 <span>I agree!</span>
               </label>
-
               
               {% elif (field.type == "SubmitField")%}
                   {{ field(class="nes-btn is-primary") }}<br />
@@ -48,18 +47,19 @@
                   {{ field }}<br />
                 </div>
               
+              {% elif(field.type == "DateField") %}
+                <section id="start-date" class="hidden">
+                  {{ field.label }}<br />
+                  {{ field(class='nes-input') }}<br />
+                </section>
               {% endif %}
-            </div>
-
+              </div>
           {% endfor %}
-          
         </form>
-        
         {% endblock %}
     </main>
 </body>
 
 {% include 'footer.html' %}
-
 
 </html>
