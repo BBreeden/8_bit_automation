@@ -26,17 +26,21 @@ main {
   padding: 25px;
 }
 
-p {
-  margin: 0;
-  padding: 0;
-}
-
 nav {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 15px;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  width: 100% !important;
 }
 
 #experience {
@@ -66,12 +70,20 @@ nav {
   margin: 30px 0px 30px;
 }
 
+#mage-greeting-form {
+  margin: 20px 0px;
+}
+
 #social-icons {
   padding-top: 5px;
 }
 
 .element {
   padding: 10px;
+}
+
+.form-field {
+  width: 500px;
 }
 
 .footer-text {

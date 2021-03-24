@@ -7,6 +7,15 @@
 
 <body>
     <main role="main">
+      <h1>Forms</h1>
+      <section id="mage-greeting-form">
+        <!-- Speech Bubble -->
+        <div class="nes-balloon from-left">
+            <p>Forms are probably one of the most common elements on a webpage or application. From logging in to placing an order, collecting relelvant data is important. Use the demo job application below to test out your form automation scripts!</p>
+        </div>
+        <br />
+        <img alt="An 8-bit sprite the the black mage." src="{{ url_for('static', filename='img/bmage.gif')}}">
+      </section>
 
         {% block content %}
       
@@ -28,7 +37,7 @@
                         field.type == "IntegerField" or
                         field.type == "TextAreaField") %}
                 {{ field.label }}<br />
-                {{ field(class='nes-input') }}<br />
+                {{ field(class='nes-input form-field') }}<br />
               
               {% elif (field.type == "BooleanField")%}
                 {{ field.label }}
@@ -61,5 +70,6 @@
 </body>
 
 {% include 'footer.html' %}
+<script src="{{ url_for('static', filename='js/application.js') }}"></script>
 
 </html>
