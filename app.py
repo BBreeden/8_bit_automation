@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, flash, redirect, url_for
 from forms import AppForm
 import os
 
@@ -8,21 +8,23 @@ app = Flask(__name__)
 SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = SECRET_KEY
 
-app.config["DEBUG"] = True
+app.config['DEBUG'] = True
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template('index.html')
 
 @app.route('/home')
 def home():
-    return render_template("home.html")
+    return render_template('home.html')
 
-@app.route('/forms')
+@app.route('/forms', methods=['GET', 'POST'])
 def forms():
     form = AppForm()
-    return render_template("form.html", form = form)
+    if form.validate_on_submit():
+        return "You did it."
+    return render_template('form.html', form = form)
 
-@app.route('/confirmation')
+@app.route('/confirmation', methods=['GET', 'POST'])
 def confirmation():
-    return render_template("confirmation.html")
+    return render_template('confirmation.html')

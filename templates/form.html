@@ -17,9 +17,13 @@
         <img alt="An 8-bit sprite the the black mage." src="{{ url_for('static', filename='img/bmage.gif')}}">
       </section>
 
-        {% block content %}
       
-        <form method='POST' action="{{ url_for('confirmation') }}">
+      <!-- {% block content %} -->
+      {% for field, errors in form.errors.items() %}
+      {{ ', '.join(errors) }}
+      {% endfor %}
+        <form method="POST" action="">
+          {{ form.csrf_token() }}
 
           {% for field in form %}
             <div class="element">
@@ -62,10 +66,11 @@
                   {{ field(class='nes-input') }}<br />
                 </section>
               {% endif %}
+              
               </div>
           {% endfor %}
         </form>
-        {% endblock %}
+      <!-- {% endblock %} -->
     </main>
 </body>
 
