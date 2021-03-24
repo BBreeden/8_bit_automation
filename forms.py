@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextField, SubmitField, TextAreaField, validators, IntegerField, RadioField, BooleanField, SelectField
 from wtforms.fields.html5 import DateField
-from wtforms.validators import DataRequired, Length, Email
+from wtforms.validators import DataRequired, Length, Email, NumberRange
 import email_validator
 from datetime import date
 
@@ -12,10 +12,10 @@ class AppForm(FlaskForm):
     position = SelectField('What position are you applying for?', [DataRequired()], choices=[('acc', 'Accounting Manager'), ('dev', 'Junior Software Engineer (5+ years exp required)'), ('koopa', 'Koopa Troopa'), ('astmgr', 'Assistant to the Regional Manager')])
     fname = StringField('First Name', [ DataRequired() ])
     lname = StringField('Last Name', [ DataRequired() ])
-    email = StringField('Email', [validators.DataRequired(), Email()])
+    email = StringField('Email', [DataRequired(), Email(message='Invalid email address.')])
     street = StringField('Street Address', [ DataRequired() ])
     city = StringField('City', [DataRequired()])
-    zcode = IntegerField('Zip Code', [DataRequired(), Length(min=5, message=('Please enter a valid, 5 digit zip code.')) ])
+    zcode = IntegerField('Zip Code', [DataRequired(), NumberRange(min=10000, max=99999, message='Invalid zip code, enter a 5 didit US zip code.')] )
     salary = StringField('Requested Salary ($ Per Year)', [DataRequired()])
     experience = TextAreaField('Experience from the last 16 years (no resumes accepted)', [DataRequired()])
     work = RadioField('Are you willing to work 90 hour weeks?', [DataRequired()], choices=[('Yes','yes'),('Also Yes','yes2')])
