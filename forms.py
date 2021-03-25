@@ -10,6 +10,7 @@ class AppForm(FlaskForm):
     Sample job application form fields and labels.
     '''
     position = SelectField('What position are you applying for?', [DataRequired()], choices=[('acc', 'Accounting Manager'), ('dev', 'Junior Software Engineer (5+ years exp required)'), ('koopa', 'Koopa Troopa'), ('astmgr', 'Assistant to the Regional Manager')])
+    branch = SelectField('Please select a branch:', choices=[('sc', 'Scranton, PA'), ('ak', 'Akron, OH'), ('al', 'Albany, NY'), ('na', 'Nashua, NH'), ('ny', 'New York City - Corporate HQ'), ('ro', 'Rochester, NY'), ('ut', 'Utica, NY'), ('sy', 'Syracuse, NY')])
     fname = StringField('First Name', [ DataRequired() ])
     lname = StringField('Last Name', [ DataRequired() ])
     email = StringField('Email', [DataRequired(), Email(message='Invalid email address.')])

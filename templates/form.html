@@ -11,7 +11,9 @@
       <section id="mage-greeting-form">
         <!-- Speech Bubble -->
         <div class="nes-balloon from-left">
-            <p>Forms are probably one of the most common elements on a webpage or application. From logging in to placing an order, collecting relelvant data is important. Use the demo job application below to test out your form automation scripts!</p>
+            <p>Forms are probably one of the most common elements on a webpage or application. From logging in to placing an order, collecting relelvant data is important. Use the demo job application below to test out your form automation scripts!</p><br />
+
+            <p>PS: None of this data is saved. You don't have to take my word for it, take a peek at the source code yourself!</p>
         </div>
         <br />
         <img alt="An 8-bit sprite the the black mage." src="{{ url_for('static', filename='img/bmage.gif')}}">
@@ -55,16 +57,25 @@
                   {{ field(class="nes-btn is-primary") }}<br />
 
               {% elif (field.type == "SelectField") %}
-                {{ field.label }}<br />
-                <div class="nes-select">
-                  {{ field }}<br />
-                </div>
+                {% if (field.id == 'branch') %} 
+                  <section id="branch" class="hidden">
+                    {{ field.label }}<br />
+                    <div class="nes-select">
+                      {{ field }}<br />
+                  </section>
+                {% else %}
+                  {{ field.label }}<br />
+                  <div class="nes-select">
+                    {{ field }}<br />
+                  </div>
+                {% endif %}
               
               {% elif(field.type == "DateField") %}
                 <section id="start-date" class="hidden">
                   {{ field.label }}<br />
                   {{ field(class='nes-input') }}<br />
                 </section>
+                
               {% endif %}
               
               </div>
