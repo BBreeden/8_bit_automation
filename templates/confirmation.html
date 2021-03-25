@@ -9,7 +9,23 @@
 <body>
     <main role="main">
         <h1>Application Confirmation</h1>
+
+        <p>Position: {{ form['position'] }}</p>
+        {% if (form['branch'] != None) %}
+            <p>Branch: {{ form['branch'] }}</p>
+        {% endif %}
+
         <p>First Name: {{ form['fname'] }}</p>
+        <p>Last Name: {{ form ['lname'] }}</p>
+        <p>Email: {{ form['email'] }}</p>
+        <p>Street Address: {{ form['street'] }}</p>
+        <p>City: {{ form['city'] }}</p>
+        <p>Zip Code: {{ form['zcode'] }}</p>
+        <p>Salary Requested: {{ form['salary'] }}</p>
+        <p>Experience: <br />
+            {{ form['experience'] }}</p>
+        <p>Are you willing to work 90 hour weeks? {{ form['work'] }}</p>
+        <p>Requested Start Date: {{ form['startdate'] }}</p>
     </main>
 </body>
 

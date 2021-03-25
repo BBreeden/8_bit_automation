@@ -19,8 +19,6 @@
         <img alt="An 8-bit sprite the the black mage." src="{{ url_for('static', filename='img/bmage.gif')}}">
       </section>
 
-      
-      <!-- {% block content %} -->
       {% for field, errors in form.errors.items() %}
       {{ ', '.join(errors) }}
       {% endfor %}
@@ -71,7 +69,7 @@
                 {% endif %}
               
               {% elif(field.type == "DateField") %}
-                <section id="start-date" class="hidden">
+                <section id="start-date">
                   {{ field.label }}<br />
                   {{ field(class='nes-input') }}<br />
                 </section>
@@ -81,7 +79,6 @@
               </div>
           {% endfor %}
         </form>
-      <!-- {% endblock %} -->
     </main>
 </body>
 
