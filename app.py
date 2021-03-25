@@ -21,10 +21,10 @@ def home():
 @app.route('/forms', methods=['GET', 'POST'])
 def forms():
     form = AppForm()
-    if form.validate_on_submit():
-        return "You did it."
+    if (form.validate_on_submit() and request.method == 'POST'):
+        return render_template('confirmation.html', form = request.form)
     return render_template('form.html', form = form)
 
 @app.route('/confirmation', methods=['GET', 'POST'])
 def confirmation():
-    return render_template('confirmation.html')
+    return ('Confirmed')
