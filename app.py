@@ -27,4 +27,4 @@ def forms():
 
 @app.route('/confirmation', methods=['GET', 'POST'])
 def confirmation():
-    return ('Confirmed')
+    return render_template('confirmation.html')

@@ -16,6 +16,7 @@ class AppForm(FlaskForm):
     email = StringField('Email', [DataRequired(), Email(message='Invalid email address.')])
     street = StringField('Street Address', [ DataRequired() ])
     city = StringField('City', [DataRequired()])
+    state = StringField('State', [DataRequired()])
     zcode = IntegerField('Zip Code', [DataRequired(), NumberRange(min=10000, max=99999, message='Invalid zip code, enter a 5 didit US zip code.')] )
     salary = StringField('Requested Salary ($ Per Year)', [DataRequired()])
     experience = TextAreaField('Experience from the last 16 years (no resumes accepted)', [DataRequired()])

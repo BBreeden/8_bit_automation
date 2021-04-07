@@ -78,6 +78,10 @@ textarea {
   padding-top: 5px;
 }
 
+.app-section {
+  margin: 20px 0px;
+}
+
 .element {
   padding: 10px;
 }
