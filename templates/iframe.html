@@ -1,0 +1,27 @@
+<!-- This file is not to be used directly, template only. -->
+<!doctype html>
+
+<html lang="en">
+
+{% include 'header.html' %}
+{% include 'menu.html' %}
+
+<body>
+    <main role="main">
+        <h1>iFrames</h1>
+        <section id="mage-greeting-form">
+          <!-- Speech Bubble -->
+          <div class="nes-balloon from-left">
+              <p>In HTML, iframes are used to display webpages within webpages. For example, if there a complex and dynamic menu system in a web application, it is common to find iframes.</p> <br />
+              <p>The iframe element can be a bit tricky to deal with. Here is the official documentation on how to handle them, it may serve as a good starting point!</p>
+          </div>
+          <br />
+          <img alt="An 8-bit sprite the the black mage." src="{{ url_for('static', filename='img/bmage.gif')}}">
+        </section>
+    </main>
+</body>
+
+{% include 'footer.html' %}
+
+
+</html>

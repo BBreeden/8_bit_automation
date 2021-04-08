@@ -28,3 +28,7 @@ def forms():
 @app.route('/confirmation', methods=['GET', 'POST'])
 def confirmation():
     return render_template('confirmation.html')
+
+@app.route('/iframe')
+def iframe():
+    return render_template('iframe.html')
