@@ -32,3 +32,7 @@ def confirmation():
 @app.route('/iframe')
 def iframe():
     return render_template('iframe.html')
+
+@app.route('/iframe_a')
+def iframe_a():
+    return render_template('iframe_a.html')
