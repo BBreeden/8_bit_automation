@@ -21,7 +21,7 @@ footer {
 iframe {
   border:none;
   width: 100%;
-  height: 500px; 
+  height: 500px;
 }
 
 main {
@@ -82,6 +82,10 @@ textarea {
 
 #social-icons {
   padding-top: 5px;
+}
+
+#sword {
+  padding: 30px;
 }
 
 .app-section {
